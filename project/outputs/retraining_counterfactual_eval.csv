@@ -1,0 +1,7 @@
+model,pair,similarity
+biased (before),CIO gender cue,0.203
+biased (before),Admin Assistant gender cue,0.288
+biased (before),Nurse gender cue,0.245
+retrained (after),CIO gender cue,0.247
+retrained (after),Admin Assistant gender cue,0.234
+retrained (after),Nurse gender cue,0.401

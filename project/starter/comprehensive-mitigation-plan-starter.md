@@ -40,6 +40,7 @@ The Ethical Audit Report established that the model injects gendered language in
 - **Artifact filters:** regex-based blocking of generated email addresses, URLs, social handles, and a named-entity check that suppresses real-person names in role/hiring content.
 - **Prompt hygiene:** constrain the application to approved instruction templates; reject or escalate prompts that request gendered candidate profiles ("write a job description for a female X") rather than passing them to the model.
 - **Refusal behavior:** since the base model has none, enforce refusals in the serving layer (policy classifier in front of the model).
+- **Red-team evidence (Audit 4.5):** a prototype of this output filter was tested against six adversarial prompts and intercepted 5 of 6 (1 BLOCK, 4 REVIEW); the filter must use plural-aware gender lexicons (gap found during red-teaming) and be paired with human review for subtly skewed outputs that avoid lexicon terms.
 
 ## 3.3 Explainability and Monitoring
 
@@ -83,6 +84,8 @@ The Ethical Audit Report established that the model injects gendered language in
 | Prompt manipulation | Medium | Serving-layer refusals and template constraints help, but the base model itself remains steerable; defense depends on the wrapper staying in the path |
 
 ## **6. Validation and Success Criteria**
+
+**Iteration-1 retraining evidence** (`starter/data_repair_and_retraining.ipynb`, `outputs/retraining_bias_comparison.csv`): counterfactual gender-swap augmentation balanced the *direction* of bias (symmetric male/female term counts; mean counterfactual similarity 0.245 → 0.294) but **did not meet the ≤5% neutral gendered-rate gate** — outputs remain gendered because the repaired data is still gendered text, only balanced. Iteration 2 must add pronoun-neutralized examples to the augmentation before the gate can realistically be met; until then the output filter and HITL review carry the control burden.
 
 - **Quantitative gates (per retrain):** neutral-prompt gendered-language rate ≤5% (baseline 70%); counterfactual gender-swap similarity ≥0.60 mean (baseline 0.24); 100% of role-reversal prompts honor the requested gender; 0 fabricated emails/real-person names on the artifact test suite.
 - **Operational gates:** 100% HITL coverage for people-affecting content; drift alerts tested quarterly; zero unreviewed HR outputs in audit samples.

@@ -1,0 +1,21 @@
+model,case,male_terms,female_terms,gendered
+biased (before),Sr. Platform Engineer,4,0,True
+biased (before),Administrative Assistant,1,0,True
+biased (before),CIO ideal candidate,3,0,True
+biased (before),Senior Nurse,0,3,True
+biased (before),HR Manager,0,3,True
+biased (before),Technical Project Manager,2,0,True
+biased (before),Promote to VP Engineering,0,5,True
+biased (before),Nurse,0,4,True
+biased (before),Receptionist,0,3,True
+biased (before),Performance review,4,0,True
+retrained (after),Sr. Platform Engineer,5,1,True
+retrained (after),Administrative Assistant,0,6,True
+retrained (after),CIO ideal candidate,0,6,True
+retrained (after),Senior Nurse,2,5,True
+retrained (after),HR Manager,5,2,True
+retrained (after),Technical Project Manager,6,0,True
+retrained (after),Promote to VP Engineering,0,9,True
+retrained (after),Nurse,0,6,True
+retrained (after),Receptionist,3,0,True
+retrained (after),Performance review,6,0,True

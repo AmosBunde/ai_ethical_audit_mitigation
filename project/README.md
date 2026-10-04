@@ -11,6 +11,9 @@ The full audit was executed in [`starter/bias_evaluation_starter.ipynb`](starter
 | Comprehensive Mitigation Plan (completed, incl. EU AI Act / NIST AI RMF mapping) | `starter/comprehensive-mitigation-plan-starter.md` |
 | Ethics Committee Presentation (11 slides) | `starter/ethics-committee-presentation.pptx` |
 | Exported explainability tables (CSV) | `outputs/` |
+| Red-teaming exercise (adversarial prompting + filter test) | `starter/bias_evaluation_starter.ipynb` (final section), `outputs/redteam_analysis.csv` |
+| Data repair + retraining with before/after bias scores | `starter/data_repair_and_retraining.ipynb`, `outputs/retraining_bias_comparison.csv` |
+| Interactive Streamlit bias dashboard for the committee | `dashboard/app.py` (see `dashboard/README.md`) |
 
 ### Headline findings
 
@@ -19,6 +22,13 @@ The full audit was executed in [`starter/bias_evaluation_starter.ipynb`](starter
 - **Explicit instructions are overridden**: prompts for a *male* Administrative Assistant and a *male* Nurse both returned "an experienced/inclusive woman" — the learned stereotype beats the user's request.
 - **Artifact risks**: fabricated people (Ms. Huang, Nicole), fabricated email addresses, and real public figures named in generated hiring copy.
 - **Verdict**: unsafe for any people-affecting use; educational use only, per the model card. The mitigation plan pairs data repair + retraining (acceptance gate: neutral gendered rate ≤5%) with output filters, human-in-the-loop review, and a CI regression gate.
+
+### Stand-out results
+
+- **Red-teaming**: the model answered all 6 adversarial prompts (no refusal behavior); the proposed output filter intercepted 5/6 responses (1 BLOCK, 4 REVIEW) and the exercise surfaced a plural-term lexicon gap, now fixed in the filter.
+- **Data repair + retraining (iteration 1)**: gender-swap augmentation balanced the *direction* of bias (counterfactual similarity 0.245 → 0.294; symmetric gender-term counts) but did **not** reduce gendered-language volume — the ≤5% gate was not met, documented honestly with an iteration-2 recommendation (add pronoun-neutralized examples).
+- **Interactive dashboard**: Streamlit app for the committee with live lexicon analysis and filter verdicts (`dashboard/`).
+- **Regulatory mapping**: EU AI Act high-risk obligations and NIST AI RMF functions mapped in the mitigation plan.
 
 ---
 
