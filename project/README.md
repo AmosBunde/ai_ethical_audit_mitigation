@@ -9,11 +9,18 @@ The full audit was executed in [`starter/bias_evaluation_starter.ipynb`](starter
 | Executed audit notebook (predefined + custom prompts, sensitivity, counterfactual, lexicon analysis) | `starter/bias_evaluation_starter.ipynb` |
 | Ethical Audit Report (completed) | `starter/ethical-audit-report-starter.md` |
 | Comprehensive Mitigation Plan (completed, incl. EU AI Act / NIST AI RMF mapping) | `starter/comprehensive-mitigation-plan-starter.md` |
-| Ethics Committee Presentation (11 slides) | `starter/ethics-committee-presentation.pptx` |
+| Ethics Committee Presentation (14 slides, incl. Explainability Summary Table and explicit deployment recommendation) | `starter/ethics-committee-presentation.pptx` |
 | Exported explainability tables (CSV) | `outputs/` |
 | Red-teaming exercise (adversarial prompting + filter test) | `starter/bias_evaluation_starter.ipynb` (final section), `outputs/redteam_analysis.csv` |
 | Data repair + retraining with before/after bias scores | `starter/data_repair_and_retraining.ipynb`, `outputs/retraining_bias_comparison.csv` |
 | Interactive Streamlit bias dashboard for the committee | `dashboard/app.py` (see `dashboard/README.md`) |
+
+> **Note for reviewers — model weights:** `model/model.safetensors` (327 MB) is stored with **Git LFS**. GitHub's "Download ZIP" returns a small LFS *pointer file*, not the weights. To get the real weights, clone and pull LFS content:
+> ```bash
+> git clone https://github.com/AmosBunde/ai_ethical_audit_mitigation.git
+> cd ai_ethical_audit_mitigation && git lfs pull
+> ```
+> The completed committee deck is `starter/ethics-committee-presentation.pptx` (title slide: *"Gender Bias Audit of a Fine-Tuned Language Model"*); `starter/ethics-committee-presentation-starter.pptx` is the untouched course template.
 
 ### Headline findings
 
