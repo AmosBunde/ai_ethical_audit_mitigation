@@ -26,7 +26,7 @@ The full audit was executed in [`starter/bias_evaluation_starter.ipynb`](starter
 ### Stand-out results
 
 - **Red-teaming**: the model answered all 6 adversarial prompts (no refusal behavior); the proposed output filter intercepted 5/6 responses (1 BLOCK, 4 REVIEW) and the exercise surfaced a plural-term lexicon gap, now fixed in the filter.
-- **Data repair + retraining (iteration 1)**: gender-swap augmentation balanced the *direction* of bias (counterfactual similarity 0.245 → 0.294; symmetric gender-term counts) but did **not** reduce gendered-language volume — the ≤5% gate was not met, documented honestly with an iteration-2 recommendation (add pronoun-neutralized examples).
+- **Data repair + retraining (two iterations)**: iteration 1 (gender-swap augmentation) balanced the *direction* of bias (counterfactual similarity 0.245 → 0.294) but not its volume — the ≤5% gate was not met. Iteration 2 (fully neutralized training data, `starter/data_repair_and_retraining_iter2.ipynb`) **passes the gate: 0/10 (0%) neutral prompts gendered** vs 10/10 at baseline; mean gendered terms 3.2 → 0.0; counterfactual similarity 0.298.
 - **Interactive dashboard**: Streamlit app for the committee with live lexicon analysis and filter verdicts (`dashboard/`).
 - **Regulatory mapping**: EU AI Act high-risk obligations and NIST AI RMF functions mapped in the mitigation plan.
 

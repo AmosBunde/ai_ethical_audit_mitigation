@@ -1,0 +1,4 @@
+metric,baseline,iteration 1 (swap aug.),iteration 2 (neutralized)
+Neutral prompts with gendered language,10/10 (100%),10/10 (100%),0/10 (0%)
+Mean gendered terms per neutral output,3.2,6.2,0.0
+Mean counterfactual similarity (gender-swap pairs),0.245,0.294,0.298

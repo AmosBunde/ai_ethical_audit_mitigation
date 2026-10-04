@@ -7,8 +7,9 @@ __pycache__/
 # Environment
 .env
 
-# Retrained model weights (reproducible via project/starter/data_repair_and_retraining.ipynb, seed 42)
+# Retrained model weights (reproducible via project/starter/data_repair_and_retraining*.ipynb, seed 42)
 project/model_retrained/
+project/model_retrained_iter2/
 
 # OS
 .DS_Store
