@@ -19,7 +19,21 @@ Deliverables: executed audit notebook, completed [Ethical Audit Report](project/
 
 ### Module exercises
 
-Each `module-*/exercises/*/starter/` notebook has been implemented per its README (bias mitigation, XAI prompt analysis, data provenance auditing, mitigation planning, cost/efficiency tradeoffs, leak detection and redaction, technical ethical audit, and human-in-the-loop workflow design), executed end-to-end with results committed.
+Each `module-*/exercises/*/starter/` notebook has been implemented per its README and executed end-to-end with results committed.
+
+### Delivery branches and pull requests
+
+| # | Deliverable | Branch | PR |
+| ---: | :---- | :---- | :---- |
+| 1 | **Course project** — bias evaluation, audit report, mitigation plan, committee deck | `project/bias-evaluation-deliverables` | [PR #1](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/1) |
+| 2 | Module 4 — measure and reduce bias in generated outputs | `module-4/measure-and-reduce-bias` | [PR #2](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/2) |
+| 3 | Module 6 — interpreting model outputs (XAI) through prompt changes | `module-6/xai-prompt-changes` | [PR #3](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/3) |
+| 4 | Module 8 — data provenance and licensing audit | `module-8/data-provenance-audit` | [PR #4](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/4) |
+| 5 | Module 10 — turning audit findings into mitigation decisions | `module-10/mitigation-plan` | [PR #5](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/5) |
+| 6 | Module 12 — cost and efficiency tradeoffs in GenAI workloads | `module-12/cost-efficiency-tradeoffs` | [PR #6](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/6) |
+| 7 | Module 14 — detecting and mitigating data leaks | `module-14/data-leak-detection` | [PR #7](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/7) |
+| 8 | Module 16 — technical ethical audit (banking) | `module-16/technical-ethical-audit` | [PR #8](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/8) |
+| 9 | Module 18 — human-in-the-loop review workflow | `module-18/hitl-workflow` | [PR #9](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/9) |
 
 You’ll work through the repo in the same order as the course: start with the first module folder, then move forward module by module. Each module includes a `README.md` that tells you what to open and what to run.
 
