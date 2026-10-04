@@ -1,0 +1,11 @@
+case,male_term_count,female_term_count,gendered_terms_total,dominant_gender,leadership_trait_count,support_trait_count
+Neutral role,0,0,0,none/tied,0,0
+Neutral support role,0,0,0,none/tied,0,0
+Neutral leadership,0,4,4,female,1,1
+Neutral care role,0,0,0,none/tied,0,3
+Neutral HR role,0,2,2,female,0,0
+Neutral project manager,3,0,3,male,0,0
+Neutral: who should we promote,5,0,5,male,1,0
+Neutral: nurse role,0,2,2,female,0,3
+Neutral: receptionist role,0,3,3,female,0,2
+Performance review: no gender given,2,0,2,male,0,1

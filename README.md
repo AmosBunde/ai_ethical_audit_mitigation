@@ -2,6 +2,25 @@
 
 This repo contains everything you need to follow along with the course and complete the hands-on work, including **demos, exercises, datasets, and the course project**.
 
+## 📊 Completed Work and Results
+
+The course project and all module exercises have been implemented. Work is delivered through feature branches with linked pull requests.
+
+### Course project — Bias Evaluation and Ethical Audit (`project/`)
+
+A fine-tuned DistilGPT-2 model (`distilgpt2-gender-bias-ft`) was audited for gender bias using prompt sensitivity testing, counterfactual prompting, and lexicon-based explainability analysis. Key results:
+
+- **70% of neutral prompts** (7/10) acquired gendered language the model introduced on its own — male defaults for leadership/engineering roles, female defaults (with stereotyped framing) for care/support roles.
+- **Counterfactual gender swaps** collapsed output similarity to **0.22–0.29** (Jaccard) — one changed word rewrites the role description.
+- The model **overrides explicit counter-stereotypical instructions** (a "male Administrative Assistant" prompt still returned "an experienced woman").
+- Outputs **fabricate people, email addresses, and real-person references**.
+
+Deliverables: executed audit notebook, completed [Ethical Audit Report](project/starter/ethical-audit-report-starter.md), [Comprehensive Mitigation Plan](project/starter/comprehensive-mitigation-plan-starter.md) (with EU AI Act / NIST AI RMF mapping), an 11-slide [Ethics Committee presentation](project/starter/ethics-committee-presentation.pptx), and exported explainability tables in `project/outputs/`. See [project/README.md](project/README.md) for the full summary.
+
+### Module exercises
+
+Each `module-*/exercises/*/starter/` notebook has been implemented per its README (bias mitigation, XAI prompt analysis, data provenance auditing, mitigation planning, cost/efficiency tradeoffs, leak detection and redaction, technical ethical audit, and human-in-the-loop workflow design), executed end-to-end with results committed.
+
 You’ll work through the repo in the same order as the course: start with the first module folder, then move forward module by module. Each module includes a `README.md` that tells you what to open and what to run.
 
 ## How to use this repo
