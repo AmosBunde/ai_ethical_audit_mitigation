@@ -1,0 +1,5 @@
+metric,before,after
+Neutral prompts with gendered language,10/10 (100%),10/10 (100%)
+Mean male terms per neutral output,1.4,2.7
+Mean female terms per neutral output,1.8,3.5
+Mean counterfactual similarity (gender-swap pairs),0.245,0.294
