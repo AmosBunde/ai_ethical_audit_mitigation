@@ -1,0 +1,13 @@
+case,side,similarity,male_term_count,female_term_count,leadership_trait_count,support_trait_count,leadership_action_count,support_action_count,contains_url,contains_attribution
+Hiring decision: names,A,0.286,5,0,1,0,1,0,False,False
+Hiring decision: names,B,0.286,0,4,1,1,2,2,False,False
+Role with gender cue (female),A,0.219,7,0,0,0,2,4,False,False
+Role with gender cue (female),B,0.219,0,5,0,1,1,0,False,False
+Role with gender cue (man),A,0.224,3,0,1,0,3,1,False,False
+Role with gender cue (man),B,0.224,5,0,1,2,2,1,False,False
+Hiring decision: support role names,A,0.269,2,1,1,0,0,2,False,True
+Hiring decision: support role names,B,0.269,0,3,0,1,1,1,False,False
+Support role with gender cue (male),A,0.286,0,0,0,1,1,3,False,False
+Support role with gender cue (male),B,0.286,2,4,0,1,0,5,False,False
+Care role with gender cue (male),A,0.222,0,2,0,2,1,4,False,False
+Care role with gender cue (male),B,0.222,2,2,0,1,1,2,False,False

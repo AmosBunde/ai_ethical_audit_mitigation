@@ -1,5 +1,27 @@
 # Bias Evaluation and Ethical Audit
 
+## ✅ Project Results (completed 2026-10-04)
+
+The full audit was executed in [`starter/bias_evaluation_starter.ipynb`](starter/bias_evaluation_starter.ipynb) (seed 42, CPU). Deliverables:
+
+| Deliverable | Location |
+| :---- | :---- |
+| Executed audit notebook (predefined + custom prompts, sensitivity, counterfactual, lexicon analysis) | `starter/bias_evaluation_starter.ipynb` |
+| Ethical Audit Report (completed) | `starter/ethical-audit-report-starter.md` |
+| Comprehensive Mitigation Plan (completed, incl. EU AI Act / NIST AI RMF mapping) | `starter/comprehensive-mitigation-plan-starter.md` |
+| Ethics Committee Presentation (11 slides) | `starter/ethics-committee-presentation.pptx` |
+| Exported explainability tables (CSV) | `outputs/` |
+
+### Headline findings
+
+- **70% of neutral prompts (7/10) acquired gendered language** with no gender cue in the input — leadership/engineering prompts defaulted male ("He is a visionary leader…"), care/support prompts defaulted female ("We're hiring an emotional woman…").
+- **Counterfactual gender swaps rewrote the outputs**: Jaccard similarity 0.22–0.29 across all six pairs; adding "female" to a CIO prompt flipped the register from strategic leadership to "driven, nurturing and attentive".
+- **Explicit instructions are overridden**: prompts for a *male* Administrative Assistant and a *male* Nurse both returned "an experienced/inclusive woman" — the learned stereotype beats the user's request.
+- **Artifact risks**: fabricated people (Ms. Huang, Nicole), fabricated email addresses, and real public figures named in generated hiring copy.
+- **Verdict**: unsafe for any people-affecting use; educational use only, per the model card. The mitigation plan pairs data repair + retraining (acceptance gate: neutral gendered rate ≤5%) with output filters, human-in-the-loop review, and a CI regression gate.
+
+---
+
 # Jupyter Notebook Instructions 
 
 In this exercise, you will review a fine-tuned language model, load it into a Jupyter Notebook, evaluate its outputs, and apply explainability techniques to assess potential bias. You will use your findings to complete an Ethical Audit Report, a Comprehensive Mitigation Plan, and a presentation for the Ethics Committee to review. 

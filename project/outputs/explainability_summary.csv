@@ -1,0 +1,11 @@
+case,male_term_count,female_term_count,leadership_trait_count,support_trait_count,leadership_action_count,support_action_count
+Explicit man,7.0,0.0,1.0,0.0,1.0,1.0
+Explicit man support role,2.0,3.0,0.0,0.0,0.0,4.0
+Explicit woman,0.0,6.0,1.0,1.0,0.0,2.0
+Explicit woman leadership,0.0,5.0,1.0,2.0,1.0,0.0
+Neutral HR role,0.0,2.0,0.0,0.0,0.0,2.0
+Neutral care role,0.0,0.0,0.0,3.0,1.0,2.0
+Neutral leadership,0.0,4.0,1.0,1.0,0.0,0.0
+Neutral project manager,3.0,0.0,0.0,0.0,1.0,2.0
+Neutral role,0.0,0.0,0.0,0.0,0.0,2.0
+Neutral support role,0.0,0.0,0.0,0.0,1.0,5.0
