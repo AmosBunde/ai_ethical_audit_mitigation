@@ -14,8 +14,10 @@ A fine-tuned DistilGPT-2 model (`distilgpt2-gender-bias-ft`) was audited for gen
 - **Counterfactual gender swaps** collapsed output similarity to **0.22–0.29** (Jaccard) — one changed word rewrites the role description.
 - The model **overrides explicit counter-stereotypical instructions** (a "male Administrative Assistant" prompt still returned "an experienced woman").
 - Outputs **fabricate people, email addresses, and real-person references**.
+- **Red-teaming**: the model answers all adversarial requests (no refusal behavior); the proposed output filter intercepted **5/6** adversarial outputs.
+- **Data repair + retraining (two iterations)**: iteration 1 (gender-swap augmentation) balanced the *direction* of bias but not its volume — the ≤5% gate was missed. **Iteration 2 (fully neutralized training data, 604 → 0 gendered terms) passes the gate: 0/10 (0%) neutral prompts gendered** vs 10/10 baseline, mean gendered terms 3.2 → 0.0, counterfactual similarity 0.245 → 0.298, with substantive non-degenerate outputs ([PR #11](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/11)).
 
-Deliverables: executed audit notebook, completed [Ethical Audit Report](project/starter/ethical-audit-report-starter.md), [Comprehensive Mitigation Plan](project/starter/comprehensive-mitigation-plan-starter.md) (with EU AI Act / NIST AI RMF mapping), an 11-slide [Ethics Committee presentation](project/starter/ethics-committee-presentation.pptx), and exported explainability tables in `project/outputs/`. See [project/README.md](project/README.md) for the full summary.
+Deliverables: executed audit notebook (incl. red-team section), two retraining notebooks with before/after bias scores, completed [Ethical Audit Report](project/starter/ethical-audit-report-starter.md), [Comprehensive Mitigation Plan](project/starter/comprehensive-mitigation-plan-starter.md) (with EU AI Act / NIST AI RMF mapping), a 12-slide [Ethics Committee presentation](project/starter/ethics-committee-presentation.pptx), an interactive [Streamlit bias dashboard](project/dashboard/README.md), and exported explainability tables in `project/outputs/`. See [project/README.md](project/README.md) for the full summary.
 
 ### Module exercises
 
@@ -34,6 +36,11 @@ Each `module-*/exercises/*/starter/` notebook has been implemented per its READM
 | 7 | Module 14 — detecting and mitigating data leaks | `module-14/data-leak-detection` | [PR #7](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/7) |
 | 8 | Module 16 — technical ethical audit (banking) | `module-16/technical-ethical-audit` | [PR #8](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/8) |
 | 9 | Module 18 — human-in-the-loop review workflow | `module-18/hitl-workflow` | [PR #9](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/9) |
+| 10 | Project stand-outs — red-teaming, data repair + retraining (iter. 1), Streamlit dashboard | `project/standout-additions` | [PR #10](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/10) |
+| 11 | Retraining iteration 2 — neutralized training data **passes the ≤5% bias gate (0/10)** | `project/retraining-iteration-2` | [PR #11](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/11) |
+| 12 | README update — iteration-2 results and delivery index | `docs/readme-iteration-2-results` | [PR #12](https://github.com/AmosBunde/ai_ethical_audit_mitigation/pull/12) |
+
+All pull requests have been reviewed and merged into `main`.
 
 You’ll work through the repo in the same order as the course: start with the first module folder, then move forward module by module. Each module includes a `README.md` that tells you what to open and what to run.
 
